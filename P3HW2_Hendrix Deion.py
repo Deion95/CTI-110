@@ -1,26 +1,31 @@
-Python 3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:58:39) [MSC v.1934 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
->>> 
-======== RESTART: C:\Users\hendrixd5543\Downloads\P3HW2_Hendrix Deion.py =======
-Enter the employee name:Bob
-Enter the employee's hour: 40
-Enter employee's pay rate: 19.25
-------------------------------------------
-Employee Name: Bob
+#Deion Hendrix
+#11/21/2023
+#Using If/Else Statements for employee
+
+#Get Input From User
+emp_name=input("Enter the employee name:" )
+emp_hours=int(input("Enter the employee's hour: "))
+emp_pay=float(input("Enter employee's pay rate: "))
+print("------------------------------------------")
+
+print("Employee Name:", emp_name)
+print("\n")
 
 
-Hours Worked  Pay Rate  Overtime  Overtime  Pay RegHour Pay   Gross Pay
----------------------------------------------------------------------------------------------
-40  19.25   0     0.0    770.0    770.0
->>> 
-======== RESTART: C:\Users\hendrixd5543\Downloads\P3HW2_Hendrix Deion.py =======
-Enter the employee name:Bob
-Enter the employee's hour: 40
-Enter employee's pay rate: 19.25
-------------------------------------------
-Employee Name: Bob
+if emp_hours > 40:
+    ot_hours = emp_hours - 40
+    reg_hours = 40
+else:
+    ot_hours=0
+    reg_hours=emp_hours
+
+#Calculate Pay
+ot_pay =(emp_pay * 1.5)*ot_hours
+reg_pay = emp_pay * reg_hours
+gross_pay = ot_pay + reg_pay
 
 
-Hours Worked  Pay Rate  Overtime  Overtime  Pay   RegHour Pay   Gross Pay
----------------------------------------------------------------------------------------------
-40  19.25   0     0.0    770.0    770.0
+print("Hours Worked  Pay Rate  Overtime  Overtime  Pay RegHour Pay   Gross Pay")
+print("---------------------------------------------------------------------------------------------")
+print(emp_hours,  emp_pay,   ot_hours,     ot_pay,    reg_pay,    gross_pay,)
+    
